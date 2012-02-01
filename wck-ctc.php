@@ -10,7 +10,7 @@ require_once('wordpress-creation-kit-api/wordpress-creation-kit.php');
 /* Create the WCK Page */
 
 $args = array(							
-			'page_title' => 'WCK',
+			'page_title' => 'Wordpress Creation Kit',
 			'menu_title' => 'WCK',
 			'capability' => 'edit_theme_options',
 			'menu_slug' => 'wck-page',									
@@ -27,8 +27,8 @@ function wck_ctc_remove_wck_submanu_page(){
 
 /* Create the CTC Page */
 $args = array(							
-			'page_title' => 'CTC',
-			'menu_title' => 'CTC',
+			'page_title' => 'WCK Custom Taxonomy Creator',
+			'menu_title' => 'Custom Taxonomy Creator',
 			'capability' => 'edit_theme_options',
 			'menu_slug' => 'ctc-page',									
 			'page_type' => 'submenu_page',
@@ -56,8 +56,8 @@ function wck_ctc_create_box(){
 	
 	$ct_creation_fields = array( 
 		array( 'type' => 'text', 'title' => 'Taxonomy', 'description' => '(The name of the taxonomy. Name must not contain capital letters or spaces.)', 'required' => true ),			
-		array( 'type' => 'text', 'title' => 'Singular Label', 'required' => true ),
-		array( 'type' => 'text', 'title' => 'Plural Label', 'required' => true ),
+		array( 'type' => 'text', 'title' => 'Singular Label', 'required' => true, 'description' => 'ex. Writer' ),
+		array( 'type' => 'text', 'title' => 'Plural Label', 'required' => true, 'description' => 'ex. Writers' ),
 		array( 'type' => 'checkbox', 'title' => 'Attach to', 'options' => $post_type_names ),
 		array( 'type' => 'select', 'title' => 'Hierarchical', 'options' => array( 'false', 'true' ), 'default' => 'false', 'description' => 'Is this taxonomy hierarchical (have descendants) like categories or not hierarchical like tags.' ),
 
@@ -270,15 +270,21 @@ function wck_ctc_help () {
 
     // Add help tabs
     $screen->add_help_tab( array(
-        'id'	=> 'my_help_tab',
-        'title'	=> __('My Help Tab'),
-        'content'	=> '<p>' . __( 'Descriptive content that will show in My Help Tab-body goes here.' ) . '</p>',
+        'id'	=> 'wck_ctc_overview',
+        'title'	=> __('Overview'),
+        'content'	=> '<p>' . __( 'WCK Custom Taxonomy Creator allows you to easily create custom taxonomy for Wordpress without any programming knowledge.<br />Most of the common options for creating a taxonomy are displayed by default while the advanced options and label are just one click away.' ) . '</p>',
     ) );
 	
 	$screen->add_help_tab( array(
-        'id'	=> 'my_help_tab2',
-        'title'	=> __('My Help Tab 2'),
-        'content'	=> '<p>' . __( 'Descriptive content that will goes here.' ) . '</p>',
+        'id'	=> 'wck_ctc_labels',
+        'title'	=> __('Labels'),
+        'content'	=> '<p>' . __( 'For simplicity you are required to introduce only the Singular Label and Plural Label from wchich the rest of the labels will be formed.<br />For a more detailed control of the labels you just have to click the "Show Advanced Label Options" link and all the availabel labels will be displayed' ) . '</p>',
+    ) );
+	
+	$screen->add_help_tab( array(
+        'id'	=> 'wck_ctc_advanced',
+        'title'	=> __('Advanced Options'),
+        'content'	=> '<p>' . __( 'The Advanced Options are set to the most common defaults for taxonomies. To display them click the "Show Advanced Options" link.' ) . '</p>',
     ) );
 }
 ?>

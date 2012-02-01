@@ -5,13 +5,13 @@
 }
 
 .mb-right-column{
-	padding-left:200px;
+	overflow:hidden;
 }
 
 .field-label{
 	width:190px;
 	float:left;
-	min-height:34px;
+	min-height:30px;
 	font-weight:bold;
 	padding-right:10px;
 }
