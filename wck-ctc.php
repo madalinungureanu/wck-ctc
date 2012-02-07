@@ -120,10 +120,10 @@ function wck_ctc_create_taxonomy(){
 			
 			$args = array(
 				'labels' => $labels,
-				'public' => $ct['public'],								
-				'show_ui' => $ct['show-ui'], 								
-				'hierarchical' => $ct['hierarchical'],
-				'show_tagcloud' => $ct['show-tagcloud']
+				'public' => (bool)$ct['public'],								
+				'show_ui' => (bool)$ct['show-ui'], 								
+				'hierarchical' => (bool)$ct['hierarchical'],
+				'show_tagcloud' => (bool)$ct['show-tagcloud']
 			);
 
 			if( !empty( $ct['attach-to'] ) )
