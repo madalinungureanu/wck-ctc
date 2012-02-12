@@ -49,7 +49,7 @@ function wck_ctc_create_box(){
 	$post_types = get_post_types($args,$output);
 	$post_type_names = array(); 
 	foreach ($post_types  as $post_type ) {
-		if ( $post_type->name != 'attachment' ) 
+		if ( $post_type->name != 'attachment' && $post_type->name != 'wck-meta-box' ) 
 			$post_type_names[] = $post_type->name;
 	}
 	
@@ -120,10 +120,10 @@ function wck_ctc_create_taxonomy(){
 			
 			$args = array(
 				'labels' => $labels,
-				'public' => (bool)$ct['public'],								
-				'show_ui' => (bool)$ct['show-ui'], 								
-				'hierarchical' => (bool)$ct['hierarchical'],
-				'show_tagcloud' => (bool)$ct['show-tagcloud']
+				'public' => $ct['public'] == 'false' ? false : true,								
+				'show_ui' => $ct['show-ui'] == 'false' ? false : true, 								
+				'hierarchical' => $ct['hierarchical'] == 'false' ? false : true,
+				'show_tagcloud' => $ct['show-tagcloud'] == 'false' ? false : true
 			);
 
 			if( !empty( $ct['attach-to'] ) )
