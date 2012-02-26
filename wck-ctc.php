@@ -27,8 +27,8 @@ function wck_ctc_remove_wck_submanu_page(){
 
 /* Create the CTC Page */
 $args = array(							
-			'page_title' => 'WCK Custom Taxonomy Creator',
-			'menu_title' => 'Custom Taxonomy Creator',
+			'page_title' => 'WCK Taxonomy Creator',
+			'menu_title' => 'Taxonomy Creator',
 			'capability' => 'edit_theme_options',
 			'menu_slug' => 'ctc-page',									
 			'page_type' => 'submenu_page',
@@ -145,6 +145,7 @@ function ctc_flush_rules(){
 
 /* add refresh to page */
 add_action("wck_refresh_list_wck_ctc", "wck_ctc_after_refresh_list");
+add_action("wck_refresh_entry_wck_ctc", "wck_ctc_after_refresh_list");
 function wck_ctc_after_refresh_list(){
 	echo '<script type="text/javascript">window.location="'. get_admin_url() . 'admin.php?page=ctc-page&updated=true' .'";</script>';
 }
@@ -233,7 +234,7 @@ function wck_ctc_display_adv_wrapper_end( $form, $i ){
 /* Add side metaboxes */
 add_action('add_meta_boxes', 'wck_ctc_add_side_boxes' );
 function wck_ctc_add_side_boxes(){
-	add_meta_box( 'wck-ctc-side', 'Side Box', 'wck_ctc_side_box_one', 'wck_page_ctc-page', 'side', 'high' );
+	add_meta_box( 'wck-ctc-side', 'Wordpress Creation Kit', 'wck_ctc_side_box_one', 'wck_page_ctc-page', 'side', 'high' );
 }
 function wck_ctc_side_box_one(){
 	?>
