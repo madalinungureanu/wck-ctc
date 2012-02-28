@@ -1,7 +1,27 @@
 <?php
 /*
-Plugin Name: WCK CTC
+Plugin Name: WCK Taxonomy Creator
 Description: Creates Custom taxonomies
+Author: Reflection Media, Madalin Ungureanu
+Version: 1.0
+Author URI: http://www.reflectionmedia.ro
+
+License: GPL2
+
+== Copyright ==
+Copyright 2011 Reflection Media (wwww.reflectionmedia.ro)
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
 /* include Custom Fields Creator API */
@@ -273,7 +293,7 @@ function wck_ctc_help () {
     $screen->add_help_tab( array(
         'id'	=> 'wck_ctc_overview',
         'title'	=> __('Overview'),
-        'content'	=> '<p>' . __( 'WCK Custom Taxonomy Creator allows you to easily create custom taxonomy for Wordpress without any programming knowledge.<br />Most of the common options for creating a taxonomy are displayed by default while the advanced options and label are just one click away.' ) . '</p>',
+        'content'	=> '<p>' . __( 'WCK Custom Taxonomy Creator allows you to easily create custom taxonomy for Wordpress without any programming knowledge.<br />Most of the common options for creating a taxonomy are displayed by default while the advanced and label options are just one click away.' ) . '</p>',
     ) );
 	
 	$screen->add_help_tab( array(
